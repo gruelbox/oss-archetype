@@ -3,6 +3,13 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <id>oss-archetype</id>
   <requiredProperties>
+    <requiredProperty key="groupId">
+      <defaultValue>com.gruelbox</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="artifactId"/>
+    <requiredProperty key="version">
+      <defaultValue>0.0.1-SNAPSHOT</defaultValue>
+    </requiredProperty>
     <requiredProperty key="githubOrganisation">
       <defaultValue>gruelbox</defaultValue>
     </requiredProperty>
