@@ -6,11 +6,11 @@
 [![Sonarcloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=com.${githubOrganisation}%3A${artifactId}&metric=coverage)](https://sonarcloud.io/dashboard?id=com.${githubOrganisation}%3A${artifactId})
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.${githubOrganisation}%3A${artifactId}&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.${githubOrganisation}%3A${artifactId})
 
-TODO
+Add information here about the project
 
-## Usage
+## Installation
 
-### Add to your pom.xml
+Add the dependency to your POM:
 
 ```
 <dependency>
@@ -20,6 +20,6 @@ TODO
 </dependency>
 ```
 
-### TODO
+### Usage
 
 TODO
