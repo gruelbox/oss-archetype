@@ -4,6 +4,9 @@
   <groupId>com.gruelbox</groupId>
   <artifactId>oss-archetype</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Archetype - oss-archetype</name>
-  <url>http://maven.apache.org</url>
+  <name>A Maven archetype for open source projects</name>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
 </project>
