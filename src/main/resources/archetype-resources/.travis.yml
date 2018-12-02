@@ -1,0 +1,44 @@
+language: java
+install: true
+#addons:
+#  sonarcloud:
+#    organization: "${githubOrganisation}"
+#    token:
+#      secure: "REQUIRED"
+#notifications:
+#  slack: ${githubOrganisation}:REQUIRED
+jobs:
+  include:
+    - if: repo = ${githubOrganisation}/${artifactId} AND branch = master AND NOT type = pull_request
+      name: "Test"
+      script:
+#        - git fetch --unshallow --quiet
+        - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent test sonar:sonar -Pcoverage-per-test -B -U
+    - if: repo = ${githubOrganisation}/${artifactId} AND NOT branch = master AND NOT type = pull_request
+      name: "Test"
+      script:
+#        - git fetch --unshallow --quiet
+        - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent test sonar:sonar -Pcoverage-per-test -B -U -Dsonar.branch.name=$TRAVIS_BRANCH
+    - if: repo = ${githubOrganisation}/${artifactId} AND head_repo = ${githubOrganisation}/${artifactId} AND type = pull_request
+      name: "Test"
+      script:
+#        - git fetch --unshallow --quiet
+        - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent test sonar:sonar -Pcoverage-per-test -B -U -Dsonar.pullrequest.key=$TRAVIS_PULL_REQUEST -Dsonar.pullrequest.branch=$TRAVIS_PULL_REQUEST_BRANCH -Dsonar.pullrequest.base=$TRAVIS_BRANCH
+    - if: repo = ${githubOrganisation}/${artifactId} AND (branch = master OR tag IS present) AND NOT type = pull_request
+      name: "Deploy"
+      script:
+        - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+        - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
+        - mvn clean deploy --settings .maven-settings.xml -B -U -Prelease
+    - if: (repo = ${githubOrganisation}/${artifactId} AND NOT head_repo = ${githubOrganisation}/${artifactId} AND type = pull_request) OR NOT repo = ${githubOrganisation}/${artifactId} 
+      name: "Test"
+      script:
+        - mvn clean test -B -U
+matrix:
+  fast_finish: true
+  include:
+    - jdk: oraclejdk8
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'

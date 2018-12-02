@@ -1,0 +1,39 @@
+<archetype
+  xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id>oss-archetype</id>
+  <requiredProperties>
+    <requiredProperty key="githubOrganisation">
+      <defaultValue>gruelbox</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="organisationName">
+      <defaultValue>Gruelbox</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="organisationUrl">
+      <defaultValue>https://gruelbox.com</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="authorName">
+      <defaultValue>Graham Crockford</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="authorEmail">
+      <defaultValue>graham@gruelbox.com</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
+  <fileSets>
+    <fileSet filtered="false" packaged="false" encoding="UTF-8">
+      <directory />
+      <includes>
+        <include>.gitignore</include>
+        <include>.maven-settings.xml</include>
+        <include>LICENSE</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="false" encoding="UTF-8">
+      <directory />
+      <includes>
+        <include>.travis.yml</include>
+        <include>README.md</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</archetype>
