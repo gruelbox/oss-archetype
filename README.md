@@ -35,12 +35,20 @@ You can now open the project in your IDE and push it to GitHub.
 
 ## Connect to Sonar
 
-TODO
+TODO detail
+
+  - Add to account
+  - Create key
+  - Encrypt with `travis` ruby tool
+  - Add to POM
 
 ## Enable Travis build
 
-TODO
+TODO detail
+
+  - Add to Travis
+  - SHould just work
 
 ## Publish to Maven Central
 
-TODO
+TODO, referencing https://www.phillip-kruger.com/post/continuous_integration_to_maven_central/
