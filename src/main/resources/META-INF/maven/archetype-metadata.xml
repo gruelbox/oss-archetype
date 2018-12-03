@@ -31,6 +31,7 @@
     <fileSet filtered="false" packaged="false" encoding="UTF-8">
       <directory />
       <includes>
+        <include>etc/*</include>
         <include>.gitignore</include>
         <include>.maven-settings.xml</include>
         <include>LICENSE</include>
