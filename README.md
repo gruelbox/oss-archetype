@@ -1,4 +1,7 @@
 # oss-archetype
+
+[![Build Status](https://travis-ci.org/gruelbox/oss-archetype.svg?branch=master)](https://travis-ci.org/gruelbox/oss-archetype)
+
 An opinionated archetype designed to set up a new open source library. Includes:
 
   - JUnit
