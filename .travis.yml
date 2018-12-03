@@ -1,0 +1,19 @@
+language: java
+install: true
+#addons:
+#  sonarcloud:
+#    organization: "${githubOrganisation}"
+#    token:
+#      secure: "REQUIRED"
+notifications:
+  slack: gruelbox:KxlNRVRsbXFQkO94YtHSdAmS
+script:
+  - mvn install
+matrix:
+  fast_finish: true
+  include:
+    - jdk: oraclejdk8
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
