@@ -52,3 +52,7 @@ TODO detail
 ## Publish to Maven Central
 
 TODO, referencing https://www.phillip-kruger.com/post/continuous_integration_to_maven_central/
+
+# Credit
+
+Large parts of this build heavily on the Travis script and POM in Alfa Systems [Morf](https://github.com/alfasoftware/morf) by Venushka Perera, which uses a toolset I am familiar with and use for all my projects.  It in turn leans heavily on the approach in [this great post](https://www.phillip-kruger.com/post/continuous_integration_to_maven_central/) by Phillip Krüger.
