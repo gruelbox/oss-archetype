@@ -19,9 +19,9 @@ Along with all configuration in place and instructions for setting up:
 
 And a README chock-full of lovely badges covering everything from test coverage to build status to Javadocs.
 
-# Usage
+## Usage
 
-## Create the project
+### Create the project
 
 To create your project, clone this repo, then:
 
@@ -33,7 +33,7 @@ mvn archetype:generate -DarchetypeGroupId=com.gruelbox -DarchetypeArtifactId=oss
 
 You can now open the project in your IDE and push it to GitHub.
 
-## Connect to Sonar
+### Connect to Sonar
 
 TODO detail
 
@@ -42,7 +42,7 @@ TODO detail
   - Encrypt with `travis` ruby tool
   - Add to POM
 
-## Enable Travis build
+### Enable Travis build
 
 TODO detail
 
@@ -53,6 +53,6 @@ TODO detail
 
 TODO, referencing https://www.phillip-kruger.com/post/continuous_integration_to_maven_central/
 
-# Credit
+## Credit
 
 Large parts of this build heavily on the Travis script and POM in Alfa Systems [Morf](https://github.com/alfasoftware/morf) by Venushka Perera, which uses a toolset I am familiar with and use for all my projects.  It in turn leans heavily on the approach in [this great post](https://www.phillip-kruger.com/post/continuous_integration_to_maven_central/) by Phillip Krüger.
